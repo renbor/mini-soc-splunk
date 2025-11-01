@@ -21,6 +21,12 @@
 
 ---
 
+## 📊 Vista del dashboard en Splunk
+
+![Dashboard del Mini SOC](https://raw.githubusercontent.com/renbor/mini-soc-splunk/refs/heads/main/assets/dashboard_overview.png)
+
+---
+
 ## ⚙️ Ejemplos de búsquedas (SPL)
 
 **Detección de accesos fallidos por usuario:**
