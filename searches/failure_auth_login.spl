@@ -1,10 +1,35 @@
-#Logs de autenticación fallida por user
+## ======================================================================
+## Archivo: failure_auth_login.spl
+## Descripción: Búsquedas SPL para detección de autenticaciones fallidas.
+## Proyecto: Mini SOC en Splunk - Portfolio personal
+## Autor: [Tu Nombre]
+## ======================================================================
+
+## ----------------------------------------------------------------------
+## BÚSQUEDA 1: Cantidad de intentos por usuario
+## ----------------------------------------------------------------------
+## Objetivo:
+## Analiza los logs de autenticación (/var/log/auth.log) para detectar
+## intentos fallidos de acceso, agrupando por usuario y dirección IP origen.
+## ----------------------------------------------------------------------
+
 index=main source="/var/log/auth.log" "Failed password"
 | rex "Failed password for (invalid user )?(?<user>\S+) from (?<src>\d+\.\d+\.\d+\.\d+)"
 | stats count as attempts by user, src
 | sort - attempts
 
-#Logs de autenticación fallida por IP
+## ----------------------------------------------------------------------
+## BÚSQUEDA 2: Top de IPs con más fallos
+## ----------------------------------------------------------------------
+## Objetivo:
+## Identifica las direcciones IP con mayor cantidad de intentos fallidos.
+## Esta búsqueda permite visualizar el top 10 de IPs para análisis rápido.
+## ----------------------------------------------------------------------
+
 index=main source="/var/log/auth.log" "Failed password"
 | rex "from (?<src>\d+\.\d+\.\d+\.\d+)"
 | top limit=10 src
+
+## ======================================================================
+## Fin del archivo
+## ======================================================================
