@@ -29,6 +29,3 @@ index=main source="/var/log/auth.log" "Failed password"
 | rex "from (?<src>\d+\.\d+\.\d+\.\d+)"
 | top limit=10 src
 
-## 📊 Vista del dashboard en Splunk
-
-![Dashboard del Mini SOC](https://raw.githubusercontent.com/TU_USUARIO/mini-soc-splunk/main/assets/dashboard.png)
