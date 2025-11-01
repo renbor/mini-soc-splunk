@@ -1,1 +1,10 @@
+#Logs de autenticación fallida por user
+index=main source="/var/log/auth.log" "Failed password"
+| rex "Failed password for (invalid user )?(?<user>\S+) from (?<src>\d+\.\d+\.\d+\.\d+)"
+| stats count as attempts by user, src
+| sort - attempts
 
+#Logs de autenticación fallida por IP
+index=main source="/var/log/auth.log" "Failed password"
+| rex "from (?<src>\d+\.\d+\.\d+\.\d+)"
+| top limit=10 src
