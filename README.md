@@ -23,7 +23,7 @@
 
 ## ⚙️ Ejemplos de búsquedas (SPL)
 
-**Detección de accesos fallidos por usuario (más de 5 en ventana):**
+**Detección de accesos fallidos por usuario:**
 ```spl
 index=main source="/var/log/auth.log" "Failed password"
 | rex "from (?<src>\d+\.\d+\.\d+\.\d+)"
