@@ -2,6 +2,7 @@
 
 **Proyecto personal**: Implementación de un Mini SOC con Splunk.
 Objetivo: Diseñar dashboards para la detección y visualización de intentos de inicio de sesión fallidos, analizando métricas por dirección IP y usuario.
+
 La implementación se realizó sobre un servidor Ubuntu Server 22.04 con Apache, generando eventos reales mediante sesiones SSH simuladas.
 
 ---
