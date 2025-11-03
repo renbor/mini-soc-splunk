@@ -1,6 +1,8 @@
 # 🛡️ Mini SOC en Splunk
 
-**Proyecto personal:** Mini SOC implementado con Splunk. Objetivo: practicar ingesta, normalización, detección y visualización de eventos de seguridad.
+**Proyecto personal**: Implementación de un Mini SOC con Splunk.
+Objetivo: Diseñar dashboards para la detección y visualización de intentos de inicio de sesión fallidos, analizando métricas por dirección IP y usuario.
+La implementación se realizó sobre un servidor Ubuntu Server 22.04 con Apache, generando eventos reales mediante sesiones SSH simuladas.
 
 ---
 
